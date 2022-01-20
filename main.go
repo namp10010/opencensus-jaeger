@@ -55,6 +55,11 @@ func doWork(ctx context.Context) {
 			Code:    trace.StatusCodeUnknown,
 			Message: err.Error(),
 		})
+	} else {
+		span.SetStatus(trace.Status{
+			Code:    trace.StatusCodeOK,
+			Message: "everything looks alright",
+		})
 	}
 
 	// 7. Annotate our span to capture metadata about our operation

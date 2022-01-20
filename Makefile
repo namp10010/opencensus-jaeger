@@ -1,7 +1,7 @@
 # run starts jaeger in a container and then runs main.go to create and push span data to it.
 # Once finished, open jaeger UI at http://localhost:16686 to see trace
 run:
-	docker run -d --name jaeger \
+	docker run -d \
       -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 \
       -p 5775:5775/udp \
       -p 6831:6831/udp \
